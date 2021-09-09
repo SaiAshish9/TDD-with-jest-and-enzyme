@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <button id="btn" onClick={() => setCounter((c) => c + 1)}>
+        Inc
+      </button>
+      <p id="counter">{counter}</p>
     </div>
   );
 }
